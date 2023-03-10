@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/forhibernateex</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Ozzy1401</property>
+
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Mapping SINGLETABLE -->
+       <!-- <mapping class ="SingleTable.SportsPerson"/>
+        <mapping class ="SingleTable.Runner"/>
+        <mapping class ="SingleTable.Lifter"/>-->
+
+        <!-- Mapping JoinedTables... all class Tables -->
+       <!-- <mapping class ="JoinedTables.SportsPerson"/>
+        <mapping class ="JoinedTables.Runner"/>
+        <mapping class ="JoinedTables.Lifter"/>-->
+
+        <!-- Mapping TABLEperCLASS... only concrete classes will get tables -->
+        <mapping class ="TablePerClass.SportsPerson"/>
+        <mapping class ="TablePerClass.Runner"/>
+        <mapping class ="TablePerClass.Lifter"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>
